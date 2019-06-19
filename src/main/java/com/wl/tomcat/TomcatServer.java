@@ -24,8 +24,10 @@ public class TomcatServer {
     private static Map<String, Project> projectMap= new HashMap<>();
 
     public static void main(String[] args) throws Exception{
-        String binPath = System.getProperty("user.dir");
-        String tomcatHome = binPath.substring(0, binPath.lastIndexOf("bin"));
+        String tomcatHome = System.getProperty("user.dir");
+        if(tomcatHome.endsWith("bin")){
+            tomcatHome = tomcatHome.substring(0, tomcatHome.lastIndexOf("bin"));
+        }
         System.out.println("tomcat_home: " + tomcatHome);
         //加载项目
         projectMap = ProjectUtil.load(tomcatHome);

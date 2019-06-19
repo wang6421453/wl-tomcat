@@ -17,7 +17,7 @@ import java.util.Set;
 public class ProjectUtil {
 
     public static Map<String, Project> load(String tomcatHome) throws Exception{
-        String webappsPath = tomcatHome + "webapps";
+        String webappsPath = tomcatHome + File.separator + "webapps";
         Map<String, Project> projectMap= new HashMap<>();
         File rootFile = new File(webappsPath);
         //解压war文件
@@ -68,7 +68,7 @@ public class ProjectUtil {
                 }
                 project.setWebXml(webXml);
             }catch (Exception e){
-                System.out.println("解析项目:" + projectName + "web.xml文件失败");
+                System.out.println("解析项目:" + projectName + "的web.xml文件失败");
             }
 
             projectMap.put(projectName, project);

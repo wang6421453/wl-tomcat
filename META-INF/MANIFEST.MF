@@ -1,4 +1,0 @@
-Manifest-Version: 1.0
-Class-Path: ../libs/javax.servlet-api-4.0.1.jar
-Main-Class: com.wl.tomcat.TomcatServer
-
