@@ -34,7 +34,7 @@ public class TomcatServer {
 
         //启动
         ServerSocket serverSocket = new ServerSocket(8080);
-        System.out.println("tomcat服务启动成功...");
+        System.out.println("tomcat服务启动成功，正在监听8080端口...");
         while (!serverSocket.isClosed()){
             Socket socket = serverSocket.accept();
             threadPool.execute(() -> {
